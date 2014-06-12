@@ -1,0 +1,21 @@
+<%= form_for @sign do |f| %>
+  <p>
+    <%= f.label :sign %>
+    <%= f.text_field :sign %>
+  </p>
+  <p>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </p>
+  <p>
+    <%= f.submit 'Add sign' %>
+  </p>
+<% end %>
+
+<%= @signs.each do |sign| %>
+  <ul>
+    <li>
+      <%= sign.sign %>, <%= sign.color %>
+    </li>
+  </ul>
+<% end %>
