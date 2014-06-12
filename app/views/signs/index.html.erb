@@ -15,7 +15,7 @@
 <%= @signs.each do |sign| %>
   <ul>
     <li>
-      <%= sign.sign %>, <%= sign.color %>
+      <%= link_to "#{sign.sign}", sign_path(sign) %>, <%= sign.color %>
     </li>
   </ul>
 <% end %>

@@ -15,6 +15,21 @@ class SignsController < ApplicationController
     end
   end
 
+  def show
+    @sign = Sign.find(params[:id])
+  end
+
+  def edit
+    @sign = Sign.find(params[:id])
+  end
+
+  def update
+    @sign = Sign.find(params[:id])
+    @sign.update_attributes!(sign_params)
+
+    redirect_to signs_path
+  end
+
   private
   def sign_params
     params.require(:sign).permit(:sign, :color)
