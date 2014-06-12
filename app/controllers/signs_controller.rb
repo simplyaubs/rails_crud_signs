@@ -30,6 +30,12 @@ class SignsController < ApplicationController
     redirect_to signs_path
   end
 
+  def destroy
+    @sign = Sign.find(params[:id]).delete
+
+    redirect_to signs_path
+  end
+
   private
   def sign_params
     params.require(:sign).permit(:sign, :color)
